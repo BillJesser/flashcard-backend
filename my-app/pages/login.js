@@ -7,10 +7,17 @@ const LoginScreen = ({ navigation }) => {
 
   const handleLogin = () => {
     if (username && password) {
+      // Add your authentication logic here.
+      // If authentication is successful, navigate to the Home screen.
       navigation.navigate('Home');
     } else {
       Alert.alert('Error', 'Please enter both username and password.');
     }
+  };
+
+  const handleRegister = () => {
+    // Navigate to the Register screen
+    navigation.navigate('Register');
   };
 
   return (
@@ -35,8 +42,8 @@ const LoginScreen = ({ navigation }) => {
 
       <Button title="Login" onPress={handleLogin} />
 
-      <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-        <Text style={styles.link}>Don't have an account? Register here</Text>
+      <TouchableOpacity onPress={handleRegister}>
+        <Text style={styles.registerText}>Don't have an account? Register here</Text>
       </TouchableOpacity>
     </View>
   );
@@ -62,8 +69,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 5,
   },
-  link: {
+  registerText: {
     marginTop: 20,
+    fontSize: 16,
     color: 'blue',
     textAlign: 'center',
   },

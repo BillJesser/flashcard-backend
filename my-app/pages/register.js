@@ -3,14 +3,12 @@ import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
 
 const RegisterScreen = ({ navigation }) => {
   const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleRegister = () => {
-    if (username && email && password && confirmPassword) {
+    if (username && password && confirmPassword) {
       if (password === confirmPassword) {
-        // Implement your registration logic here (e.g., API call)
         Alert.alert('Registration Successful', `Welcome, ${username}!`);
         navigation.navigate('Login'); // Navigate back to the Login screen
       } else {
@@ -31,15 +29,6 @@ const RegisterScreen = ({ navigation }) => {
         value={username}
         onChangeText={setUsername}
         autoCapitalize="none"
-      />
-
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        value={email}
-        onChangeText={setEmail}
-        autoCapitalize="none"
-        keyboardType="email-address"
       />
 
       <TextInput

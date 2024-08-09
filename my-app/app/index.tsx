@@ -1,17 +1,18 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import LoginScreen from '../pages/login'; // Replace with your actual file path
-import RegisterScreen from '../pages/register'; // Example of another screen
+import LoginScreen from '../pages/login';
+import RegisterScreen from '../pages/register';
+import HomeScreen from '../pages/home';
+import CreateFlashcardSetScreen from '../pages/addingflashcards'; // Placeholder
+import ReviewFlashcardSetsScreen from '../pages/flashcardsets'; // Placeholder
+import FlashcardSetDetailScreen from '../pages/flashcardViewing'; // Placeholder
+import FinalizeSet from '../pages/finializeflashset'; // Placeholder
 
-type RootStackParamList = {
-  Login: undefined;
-  Register: undefined;
-};
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator();
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <NavigationContainer independent={true}>
       <Stack.Navigator initialRouteName="Login">
@@ -24,6 +25,31 @@ const App: React.FC = () => {
           name="Register" 
           component={RegisterScreen} 
           options={{ title: 'Register' }} 
+        />
+        <Stack.Screen 
+          name="Home" 
+          component={HomeScreen} 
+          options={{ title: 'Home' }} 
+        />
+        <Stack.Screen 
+          name="CreateFlashcardSet" 
+          component={CreateFlashcardSetScreen} 
+          options={{ title: 'Create Flashcard Set' }} 
+        />
+        <Stack.Screen 
+          name="ReviewFlashcardSets" 
+          component={ReviewFlashcardSetsScreen} 
+          options={{ title: 'Review Flashcard Sets' }} 
+        />
+        <Stack.Screen 
+          name="FlashcardSetDetail" 
+          component={FlashcardSetDetailScreen} 
+          options={{ title: 'Flashcard Set Detail' }} 
+        />
+        <Stack.Screen 
+          name="FinalizeSet" 
+          component={FinalizeSet} 
+          options={{ title: 'Finalize Set' }} 
         />
       </Stack.Navigator>
     </NavigationContainer>
