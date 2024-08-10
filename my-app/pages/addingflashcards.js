@@ -20,7 +20,7 @@ const CreateFlashcardSetScreen = ({ navigation }) => {
   const handleFinish = () => {
     if (flashcards.length > 0) {
       // Implement logic to save flashcard set
-      navigation.navigate('FinalizeSet');
+      navigation.navigate('Home');
     } else {
       Alert.alert('Error', 'Please add at least one flashcard.');
     }
@@ -58,7 +58,7 @@ const CreateFlashcardSetScreen = ({ navigation }) => {
       />
 
       <Button 
-        title="Finish Editing Flashcard Set" 
+        title="Done Adding Flashcards" 
         onPress={handleFinish} 
         color="#841584"
       />

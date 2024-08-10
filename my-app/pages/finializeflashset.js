@@ -15,7 +15,7 @@ const FlashcardSetDetailsScreen = ({ navigation }) => {
   const handleSaveSet = () => {
     // Handle the save logic here (e.g., save to a database or state)
     // Navigate back to a relevant screen, such as the home screen or a summary screen
-    navigation.navigate('Home');
+    navigation.navigate('CreateFlashcardSet');
   };
 
   return (
@@ -43,7 +43,7 @@ const FlashcardSetDetailsScreen = ({ navigation }) => {
         editable={false} // Prevents the user from editing the date
       />
 
-      <Button title="Save Set" onPress={handleSaveSet} />
+      <Button title="Create New Set" onPress={handleSaveSet} />
     </View>
   );
 };

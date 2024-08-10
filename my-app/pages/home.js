@@ -4,7 +4,7 @@ import { View, Text, Button, StyleSheet } from 'react-native';
 const HomeScreen = ({ navigation }) => {
   const handleCreateFlashcardSet = () => {
     // Navigate to the screen where users can create a new flashcard set
-    navigation.navigate('CreateFlashcardSet');
+    navigation.navigate('FinalizeSet');
   };
 
   const handleReviewFlashcardSets = () => {
